@@ -104,7 +104,7 @@ function initOverlay({ modalId, backId, closeId }){
 
   const l1 = layer(2200, 1600, 1.0, 0xffffff, .4);
   const l2 = layer(600,  1100, 1.8, 0xc4d0ff, .32);
-  const l3 = layer(140,   800, 3.2, 0x2dd4bf, .5);
+  const l3 = layer(140,   800, 3.2, 0x00e5ff, .5);
   scene.add(l1, l2, l3);
 
   let mx = 0, my = 0, tx = 0, ty = 0, t = 0;
