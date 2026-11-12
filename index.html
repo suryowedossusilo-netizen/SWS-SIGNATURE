@@ -1,0 +1,767 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Suryo Wedo Susilo | IT Support &amp; Technology Portfolio</title><meta name="description" content="Suryo Wedo Susilo — IT Support Specialist focused on infrastructure, network operations, technical support, and practical digital projects."><meta name="author" content="Suryo Wedo Susilo"><meta name="theme-color" content="#080C14"><link rel="canonical" href="https://suryowedossusilo-netizen.github.io/SWS-SIGNATURE/"><meta property="og:type" content="website"><meta property="og:title" content="Suryo Wedo Susilo | IT Support &amp; Technology Portfolio"><meta property="og:description" content="IT Support, infrastructure operations, network installation, and selected technology projects."><meta property="og:url" content="https://suryowedossusilo-netizen.github.io/SWS-SIGNATURE/"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><script defer src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js" integrity="sha384-d9gEjgHFkIvVcBQxVIeSCmcG5H55dzKKnhMdCQnOQAI8JNjUqZB+KkCu35jYypQi" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" integrity="sha384-li4UtcFCH6QeUqR4JyV58/VgTprMuz9aauj+oWtew7V4Y7ZVjnvz5px9Y3UCG0Ea" crossorigin="anonymous"></script><link rel="icon" type="image/svg+xml" href="favicon.svg"><style>
+/* ════════════════════════════════════════
+   TOKENS
+════════════════════════════════════════ */
+:root {
+  --bg:       #080C14;
+  --bg2:      #101722;
+  --teal:     #00E5FF;
+  --teal-a:   rgba(0,229,255,0.07);
+  --rim:      rgba(255,255,255,0.06);
+  --rim2:     rgba(255,255,255,0.12);
+  --prose:    #F2F2F2;
+  --mid:      #9299A5;
+  --dim:      #566579;
+  --serif:    'Fraunces', Georgia, serif;
+  --sans:     'Plus Jakarta Sans', system-ui, sans-serif;
+  --ease:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ph:       clamp(1.5rem, 6vw, 5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: auto; /* Lenis handles smooth */ }
+
+body {
+  background: var(--bg);
+  color: var(--prose);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+.skip { position: absolute; top: -50px; left: 1rem; padding: .5rem 1rem; background: var(--teal); color: #080C14; border-radius: 3px; font-size: 12px; font-weight: 500; z-index: 99999; text-decoration: none; transition: top .2s; }
+.skip:focus { top: .75rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+/* ════════════════════════════════════════
+   PAGE LOADER
+════════════════════════════════════════ */
+#loader {
+  position: fixed; inset: 0; z-index: 10000;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+#loader-name {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 200;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  color: var(--prose);
+  overflow: hidden;
+}
+#loader-name span { display: inline-block; transform: translateY(110%); }
+#loader-bar {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 1px;
+  width: 0%;
+  background: var(--teal);
+}
+#loader-panels {
+  position: absolute; inset: 0;
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.loader-panel {
+  background: var(--bg);
+  transform-origin: top center;
+}
+
+/* ════════════════════════════════════════
+   NAV
+════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 1.4rem var(--ph);
+  display: flex; justify-content: space-between; align-items: center;
+  mix-blend-mode: normal;
+}
+nav::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(6,6,10,0.6);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--rim);
+  z-index: -1;
+  opacity: 0; transition: opacity .5s;
+}
+nav.scrolled::after { opacity: 1; }
+
+.nav-logo { font-family: var(--serif); font-size: .92rem; font-weight: 200; font-style: italic; color: var(--prose); text-decoration: none; letter-spacing: -.015em; }
+
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+
+.nav-index {
+  font-size: .65rem; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--dim); font-weight: 400; font-variant-numeric: tabular-nums;
+  min-width: 3ch;
+  transition: color .3s;
+}
+
+.nav-cta {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .75rem; font-weight: 400; color: var(--teal);
+  text-decoration: none; font-family: var(--sans);
+  letter-spacing: .03em;
+  transition: opacity .2s;
+  position: relative; padding-bottom: 2px;
+}
+.nav-cta::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: var(--teal); transform: scaleX(0); transform-origin: right;
+  transition: transform .4s var(--ease);
+}
+.nav-cta:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav-cta svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 var(--ph) clamp(4rem, 9vh, 6.5rem);
+  overflow: hidden;
+}
+
+/* WebGL canvas fills hero */
+#webgl { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+/* Animated film grain canvas */
+#grain { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: .035; }
+
+/* Grid overlay */
+.hero-grid {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background-image: linear-gradient(var(--rim) 1px,transparent 1px), linear-gradient(90deg,var(--rim) 1px,transparent 1px);
+  background-size: 100px 100px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 60%, black 10%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 60%, black 10%, transparent 100%);
+  opacity: .25;
+}
+
+/* Ambient bloom */
+.hero-bloom {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 900px; height: 700px;
+  left: -15%; top: 0;
+  background: radial-gradient(ellipse, rgba(0,229,255,0.048) 0%, transparent 60%);
+  animation: blob 14s ease-in-out infinite;
+}
+.hero-bloom-r {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 600px; height: 500px;
+  right: -10%; bottom: 10%;
+  background: radial-gradient(ellipse, rgba(120,80,255,0.025) 0%, transparent 65%);
+  animation: blob 18s ease-in-out infinite reverse;
+}
+@keyframes blob {
+  0%,100%{transform:scale(1) translate(0,0)} 33%{transform:scale(1.07) translate(24px,-18px)} 66%{transform:scale(.95) translate(-14px,12px)}
+}
+
+/* Hero content */
+.hero-inner { position: relative; z-index: 2; max-width: 1200px; width: 100%; }
+
+.hero-eyebrow {
+  display: flex; align-items: center; gap: .75rem;
+  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--teal); font-weight: 400; margin-bottom: 2.5rem;
+  opacity: 0; /* GSAP */
+}
+.hero-eyebrow-line { width: 24px; height: 1px; background: var(--teal); opacity: .7; flex-shrink: 0; }
+
+/* Clip-path text reveal — Awwwards signature */
+.clip-wrap { overflow: hidden; display: block; padding-bottom: .2em; margin-bottom: -.2em; }
+.clip-inner { display: block; transform: translateY(102%); }  /* GSAP animates to 0% */
+
+/* Monster headline */
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(4.5rem, 11.5vw, 10.5rem);
+  font-weight: 100;
+  line-height: .88;
+  letter-spacing: -.05em;
+  color: var(--prose);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+.hero-h1 .word-accent {
+  font-weight: 300;
+  font-style: normal;
+  color: var(--mid);
+}
+
+/* Sub */
+.hero-sub {
+  font-size: clamp(.95rem, 1.8vw, 1.25rem);
+  font-weight: 300;
+  color: var(--mid);
+  letter-spacing: -.01em;
+  max-width: 520px;
+  margin-bottom: 3.5rem;
+}
+
+/* Stats */
+.hero-stats {
+  display: flex; align-items: stretch; gap: 0;
+  border: 1px solid var(--rim);
+  width: fit-content;
+  margin-bottom: 3rem;
+  opacity: 0; /* GSAP */
+}
+.stat-cell {
+  padding: 1.2rem 2rem; border-right: 1px solid var(--rim);
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-val {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 200; font-style: italic;
+  line-height: 1; letter-spacing: -.03em;
+  color: var(--prose);
+  font-variant-numeric: tabular-nums;
+}
+.stat-lbl { font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-top: .35rem; }
+
+/* CTAs */
+.hero-ctas { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; opacity: 0; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--teal); color: #080C14;
+  padding: .85rem 2rem; border-radius: 2px;
+  font-size: .82rem; font-weight: 500; text-decoration: none;
+  font-family: var(--sans); white-space: nowrap;
+  position: relative; overflow: hidden; isolation: isolate;
+}
+.btn-primary .btn-fill {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.12);
+  transform: translateX(-101%);
+  transition: transform .5s var(--ease);
+  z-index: -1;
+}
+.btn-primary:hover .btn-fill { transform: translateX(0); }
+.btn-primary svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: .5rem;
+  border: 1px solid var(--rim2); color: var(--mid);
+  padding: .85rem 2rem; border-radius: 2px;
+  font-size: .82rem; font-weight: 300; text-decoration: none;
+  transition: color .25s, border-color .25s; font-family: var(--sans);
+}
+.btn-ghost:hover { color: var(--prose); border-color: rgba(255,255,255,.3); }
+
+/* Scroll cue */
+.scroll-cue {
+  position: absolute; bottom: 2.5rem; right: var(--ph);
+  display: flex; flex-direction: column; align-items: center; gap: .5rem;
+  opacity: 0; /* GSAP */
+}
+.scroll-cue-line {
+  width: 1px; height: 56px;
+  background: linear-gradient(180deg, transparent, var(--teal));
+  animation: scroll-line 2s ease-in-out infinite;
+}
+.scroll-cue-text { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: var(--dim); writing-mode: vertical-rl; }
+@keyframes scroll-line { 0%,100%{transform:scaleY(1) translateY(0)} 50%{transform:scaleY(.6) translateY(10px)} }
+
+/* ════════════════════════════════════════
+   MARQUEE BAND
+════════════════════════════════════════ */
+.marquee-band {
+  border-top: 1px solid var(--rim); border-bottom: 1px solid var(--rim);
+  overflow: hidden; white-space: nowrap; padding: 1rem 0;
+  background: var(--bg2);
+}
+.marquee-track {
+  display: inline-flex; gap: 0;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-item {
+  display: inline-flex; align-items: center; gap: 1.5rem;
+  padding: 0 2.5rem;
+  font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--dim); font-weight: 400;
+}
+.marquee-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--teal); opacity: .5; flex-shrink: 0; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ════════════════════════════════════════
+   SECTIONS
+════════════════════════════════════════ */
+.section { padding: clamp(6rem, 12vh, 10rem) var(--ph); }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.sec-kicker {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 2rem;
+}
+.sec-num { font-size: .6rem; letter-spacing: .1em; color: var(--teal); font-variant-numeric: tabular-nums; opacity: .7; }
+.sec-label { font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--dim); }
+
+.sec-h {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 200; font-style: italic;
+  line-height: .95; letter-spacing: -.04em;
+  color: var(--prose);
+  margin-bottom: clamp(3.5rem, 7vh, 6rem);
+}
+.sec-h em { color: var(--teal); font-style: italic; }
+.sec-h .roman { font-style: normal; font-weight: 100; color: var(--mid); }
+
+/* ════════════════════════════════════════
+   WORK — project grid + overlay
+════════════════════════════════════════ */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--rim);
+  gap: 0;
+}
+@media(max-width:680px){ .work-grid { grid-template-columns: 1fr; } }
+
+.work-card {
+  padding: 0;
+  position: relative; overflow: hidden;
+  background: var(--bg2);
+  border-right: 1px solid var(--rim);
+  border-bottom: 1px solid var(--rim);
+  border-top: none; border-left: none;
+  transition: background .4s;
+  text-align: left; width: 100%;
+  font-family: inherit; color: inherit;
+  cursor: pointer;
+  display: flex; flex-direction: column;
+}
+.work-card:nth-child(2n) { border-right: none; }
+.work-card:nth-last-child(-n+2) { border-bottom: none; }
+@media(max-width:680px){ .work-card { border-right: none !important; } .work-card:last-child { border-bottom: none; } }
+.work-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(500px circle at var(--mx,50%) var(--my,50%), rgba(0,229,255,0.055) 0%, transparent 60%);
+  opacity: 0; transition: opacity .5s; pointer-events: none; z-index: 2;
+}
+.work-card:hover::before, .work-card:focus-visible::before { opacity: 1; }
+.work-card:focus-visible { outline: 1px solid rgba(0,229,255,.5); outline-offset: -1px; }
+
+.wp-media { position: relative; width: 100%; height: 190px; overflow: hidden; background: var(--bg); }
+.wp-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(.35) saturate(.9) brightness(.85);
+  transition: filter .5s, transform .6s var(--ease);
+  display: block;
+}
+.work-card:hover .wp-media img, .work-card:focus-visible .wp-media img {
+  filter: grayscale(0) saturate(1) brightness(1);
+  transform: scale(1.04);
+}
+.wp-media::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(6,6,10,0) 40%, var(--bg2) 100%);
+}
+.wp-num {
+  position: absolute; bottom: .6rem; left: 1rem; z-index: 1;
+  font-family: var(--serif); font-size: 2.4rem; font-weight: 100; font-style: italic;
+  color: rgba(255,255,255,.85); line-height: 1; letter-spacing: -.05em;
+  text-shadow: 0 2px 12px rgba(0,0,0,.5);
+}
+.wp-body { padding: 2rem 2.25rem 2.25rem; }
+.wp-kicker { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); display: block; margin-bottom: 1rem; }
+.wp-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 200; font-style: italic; color: var(--prose); margin-bottom: 1.5rem; letter-spacing: -.02em; }
+.wp-view {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .72rem; color: var(--teal); margin-top: 1.5rem;
+}
+.wp-view svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+.tag-cloud { display: flex; flex-wrap: wrap; gap: .5rem; }
+.tag {
+  font-size: .7rem; font-weight: 400;
+  padding: .32rem .8rem; border-radius: 1px;
+  border: 1px solid var(--rim); color: var(--mid);
+  background: rgba(255,255,255,0.015);
+  transition: color .2s, border-color .25s, transform .25s;
+  cursor: default;
+}
+.tag:hover { color: var(--teal); border-color: rgba(0,229,255,.35); transform: translateY(-3px); }
+
+/* ════════════════════════════════════════
+   EXPERIENCE — vertical timeline
+════════════════════════════════════════ */
+.timeline { position: relative; padding-left: clamp(2rem, 5vw, 3.5rem); }
+.timeline-rail {
+  position: absolute; left: 0; top: .5rem; bottom: .5rem; width: 1px;
+  background: var(--rim);
+}
+.timeline-rail-fill {
+  position: absolute; left: 0; top: 0; width: 1px; height: 0%;
+  background: linear-gradient(180deg, var(--teal), rgba(0,229,255,0));
+  box-shadow: 0 0 12px rgba(0,229,255,.5);
+}
+.tl-item {
+  position: relative;
+  padding: 0 0 clamp(3rem, 6vh, 4.5rem) clamp(2rem, 4vw, 3rem);
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-node {
+  position: absolute; left: calc(-1 * clamp(2rem, 5vw, 3.5rem) - 4px);
+  top: .3rem;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--rim2);
+  transition: background .4s, border-color .4s, box-shadow .4s, transform .4s var(--ease);
+}
+.tl-item.is-active .tl-node {
+  background: var(--teal); border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(0,229,255,.12), 0 0 16px rgba(0,229,255,.5);
+  transform: scale(1.15);
+}
+.tl-date { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); opacity: .8; margin-bottom: .9rem; display: block; }
+.tl-role { font-family: var(--serif); font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 200; font-style: italic; color: var(--prose); letter-spacing: -.02em; margin-bottom: .3rem; }
+.tl-org { font-size: .78rem; color: var(--mid); margin-bottom: 1.4rem; }
+.tl-desc { font-size: .88rem; color: var(--mid); line-height: 1.75; max-width: 620px; margin-bottom: 1.2rem; }
+.tl-desc strong { color: var(--prose); font-weight: 500; }
+.tl-highlights { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* ════════════════════════════════════════
+   SKILLS — proficiency grid
+════════════════════════════════════════ */
+.skills-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  border: 1px solid var(--rim);
+}
+@media(max-width:900px){ .skills-grid { grid-template-columns: 1fr; } }
+.skill-col {
+  padding: 3rem clamp(1.75rem, 3vw, 2.75rem);
+  border-right: 1px solid var(--rim);
+}
+.skill-col:last-child { border-right: none; }
+@media(max-width:900px){ .skill-col { border-right: none; border-bottom: 1px solid var(--rim); } .skill-col:last-child { border-bottom: none; } }
+.skill-col-h { font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--dim); margin-bottom: 2rem; }
+.skill-row { margin-bottom: 1.6rem; }
+.skill-row:last-child { margin-bottom: 0; }
+.skill-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .55rem; }
+.skill-name { font-size: .82rem; color: var(--prose); font-weight: 400; }
+.skill-pct { font-size: .62rem; color: var(--dim); font-variant-numeric: tabular-nums; }
+.skill-bar { height: 2px; background: var(--rim); overflow: hidden; position: relative; }
+.skill-bar-fill {
+  position: absolute; inset: 0; width: 0%;
+  background: linear-gradient(90deg, rgba(0,229,255,.5), var(--teal));
+  transform-origin: left;
+}
+
+/* ════════════════════════════════════════
+   EDUCATION — accordion
+════════════════════════════════════════ */
+.edu-list { border-top: 1px solid var(--rim); }
+.edu-item { border-bottom: 1px solid var(--rim); }
+.edu-trigger {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  padding: 1.75rem 0; background: none; border: none; cursor: pointer;
+  text-align: left; font-family: var(--sans); color: var(--prose);
+}
+.edu-left { display: flex; align-items: baseline; gap: 1.5rem; min-width: 0; }
+.edu-num { font-size: .6rem; color: var(--dim); font-variant-numeric: tabular-nums; letter-spacing: .1em; flex-shrink: 0; }
+.edu-titles { min-width: 0; }
+.edu-degree { font-family: var(--serif); font-size: clamp(1.15rem, 2.4vw, 1.6rem); font-weight: 200; font-style: italic; letter-spacing: -.02em; transition: color .25s; }
+.edu-trigger:hover .edu-degree { color: var(--teal); }
+.edu-inst { font-size: .72rem; color: var(--dim); margin-top: .25rem; }
+.edu-right { display: flex; align-items: center; gap: 1.25rem; flex-shrink: 0; }
+.edu-year { font-size: .68rem; color: var(--mid); font-variant-numeric: tabular-nums; }
+.edu-plus { width: 32px; height: 32px; border: 1px solid var(--rim); border-radius: 50%; position: relative; flex-shrink: 0; transition: border-color .3s, transform .4s var(--ease); }
+.edu-plus::before, .edu-plus::after { content: ''; position: absolute; background: var(--mid); transition: background .3s; }
+.edu-plus::before { left: 50%; top: 30%; bottom: 30%; width: 1px; transform: translateX(-50%); }
+.edu-plus::after  { top: 50%; left: 30%; right: 30%; height: 1px; transform: translateY(-50%); }
+.edu-item.open .edu-plus { border-color: var(--teal); transform: rotate(135deg); }
+.edu-item.open .edu-plus::before, .edu-item.open .edu-plus::after { background: var(--teal); }
+.edu-panel { height: 0; overflow: hidden; }
+.edu-panel-inner { padding: 0 0 1.75rem clamp(0rem, 0vw, 0rem); }
+.edu-note { font-size: .84rem; color: var(--mid); line-height: 1.75; max-width: 620px; padding-left: calc(1.5rem + 2ch); }
+@media(max-width:600px){ .edu-note { padding-left: 0; } .edu-left { gap: .85rem; } }
+
+/* ════════════════════════════════════════
+   TESTIMONIALS — horizontal pin
+════════════════════════════════════════ */
+.testi-outer {
+  overflow: hidden;
+  /* height set by JS for the pin */
+}
+.testi-sticky {
+  position: sticky; top: 0;
+  height: 100svh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 0 var(--ph);
+  overflow-x: hidden;
+}
+.testi-header {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  margin-bottom: 3rem;
+}
+.testi-track-wrap {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  padding-top: 12px; margin-top: -12px;
+  overflow-x: hidden;
+}
+.testi-track {
+  display: flex; gap: 1.5rem;
+  width: max-content;
+  /* translateX driven by GSAP horizontal scroll */
+}
+
+.testi-card {
+  width: 420px; flex-shrink: 0;
+  background: var(--bg2);
+  border: 1px solid var(--rim);
+  padding: 2.5rem;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  transition: border-color .3s, transform .4s var(--ease);
+}
+.testi-card:hover { border-color: rgba(0,229,255,.2); transform: translateY(-4px); }
+.testi-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--teal) 0%, transparent 80%);
+  opacity: 0; transition: opacity .3s;
+}
+.testi-card:hover::before { opacity: .6; }
+
+.tc-platform { font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: var(--teal); opacity: .65; margin-bottom: 1.5rem; }
+.tc-quote {
+  font-family: var(--serif); font-size: 1.02rem; font-weight: 200; font-style: italic;
+  color: var(--prose); line-height: 1.75; flex: 1; margin-bottom: 2rem;
+}
+.tc-attr-row { display: flex; align-items: center; gap: .9rem; padding-top: 1.2rem; border-top: 1px solid var(--rim); }
+.tc-avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid var(--rim2); }
+.tc-attr { font-size: .68rem; color: var(--mid); line-height: 1.5; }
+
+/* Progress indicator */
+.testi-progress {
+  max-width: 1200px; margin: 1.5rem auto 0; width: 100%;
+  height: 1px; background: var(--rim);
+  position: relative;
+}
+.testi-progress-fill {
+  height: 100%; background: var(--teal);
+  width: 0%; transition: width .1s linear;
+}
+
+/* ════════════════════════════════════════
+   LINKS — large list style
+════════════════════════════════════════ */
+.links-list {
+  border-top: 1px solid var(--rim);
+}
+a.link-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--rim);
+  text-decoration: none; color: var(--prose);
+  position: relative; overflow: hidden;
+  transition: padding-left .4s var(--ease);
+}
+a.link-row::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+  background: var(--teal-a);
+  transition: width .5s var(--ease);
+}
+a.link-row:hover { padding-left: 1.5rem; }
+a.link-row:hover::before { width: 100%; }
+
+.lr-left { display: flex; align-items: center; gap: 1.5rem; }
+.lr-num { font-size: .6rem; color: var(--dim); font-variant-numeric: tabular-nums; letter-spacing: .1em; }
+.lr-name { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 200; font-style: italic; letter-spacing: -.03em; transition: color .25s; }
+a.link-row:hover .lr-name { color: var(--teal); }
+.lr-desc { font-size: .7rem; color: var(--dim); }
+
+.lr-arrow {
+  width: 44px; height: 44px; border: 1px solid var(--rim);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  transition: border-color .25s, background .25s, transform .4s var(--ease);
+  flex-shrink: 0;
+}
+.lr-arrow svg { width: 13px; height: 13px; stroke: var(--mid); fill: none; stroke-width: 1.5; transition: stroke .25s; }
+a.link-row:hover .lr-arrow { border-color: var(--teal); background: rgba(0,229,255,.08); transform: rotate(45deg); }
+a.link-row:hover .lr-arrow svg { stroke: var(--teal); }
+
+/* ════════════════════════════════════════
+   FOOTER CTA
+════════════════════════════════════════ */
+.footer-cta {
+  padding: clamp(6rem, 14vh, 11rem) var(--ph);
+  text-align: center; position: relative; overflow: hidden;
+  border-top: 1px solid var(--rim);
+}
+.fcta-glow {
+  position: absolute; bottom: -30%; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 500px;
+  background: radial-gradient(ellipse, rgba(0,229,255,0.06) 0%, transparent 65%);
+  pointer-events: none; animation: blob 16s ease-in-out infinite;
+}
+.fcta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.fcta-kicker { font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: var(--dim); margin-bottom: 2rem; display: block; }
+.fcta-h {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 200; font-style: italic; letter-spacing: -.04em;
+  color: var(--prose); line-height: .95; margin-bottom: 2.5rem;
+}
+.fcta-sub { font-size: .9rem; color: var(--mid); margin-bottom: 3rem; }
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+footer {
+  padding: 1.5rem var(--ph); border-top: 1px solid var(--rim);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .75rem;
+}
+.foot-copy { font-size: .65rem; color: var(--dim); }
+.foot-links { display: flex; gap: 2rem; list-style: none; }
+.foot-links a { font-size: .65rem; color: var(--dim); text-decoration: none; transition: color .2s; }
+.foot-links a:hover { color: var(--mid); }
+
+/* Legal */
+.legal { padding: 1rem var(--ph) .5rem; font-size: .64rem; color: var(--dim); line-height: 1.75; max-width: 1200px; margin: 0 auto; }
+.legal a { color: var(--mid); text-decoration: none; transition: color .2s; }
+.legal a:hover { color: var(--teal); }
+
+/* ════════════════════════════════════════
+   PRIVACY MODAL
+════════════════════════════════════════ */
+#pmodal {
+  position: fixed; inset: 0; z-index: 8000;
+  display: flex; align-items: flex-end; justify-content: center;
+  pointer-events: none;
+}
+#pmodal.open { pointer-events: all; }
+#pmodal-back {
+  position: absolute; inset: 0;
+  background: rgba(6,6,10,.75); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  opacity: 0; transition: opacity .35s;
+}
+#pmodal.open #pmodal-back { opacity: 1; }
+#pmodal-panel {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 640px; margin: 0 1rem;
+  background: #10101a; border: 1px solid var(--rim2); border-bottom: none;
+  border-radius: 10px 10px 0 0; padding: 2.5rem;
+  transform: translateY(105%);
+  transition: transform .5s var(--ease);
+}
+#pmodal.open #pmodal-panel { transform: translateY(0); }
+.pm-handle { width: 36px; height: 3px; background: var(--rim2); border-radius: 2px; margin: 0 auto 2.5rem; }
+.pm-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 200; font-style: italic; color: var(--prose); margin-bottom: 2rem; }
+.pm-row { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--rim); }
+.pm-row:last-of-type { border-bottom: none; }
+.pm-icon { width: 30px; height: 30px; border-radius: 5px; background: rgba(0,229,255,.07); border: 1px solid rgba(0,229,255,.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.pm-icon svg { width: 13px; height: 13px; stroke: var(--teal); fill: none; stroke-width: 2; }
+.pm-t { font-size: .78rem; font-weight: 500; color: var(--prose); margin-bottom: .2rem; }
+.pm-d { font-size: .72rem; color: var(--mid); line-height: 1.6; }
+.chip-y { display: inline-block; background: rgba(0,229,255,.1); color: var(--teal); font-size: .6rem; padding: .15rem .45rem; border-radius: 2px; border: 1px solid rgba(0,229,255,.18); margin-left: .35rem; vertical-align: middle; }
+.chip-n { display: inline-block; background: rgba(248,113,113,.07); color: #f87171; font-size: .6rem; padding: .15rem .45rem; border-radius: 2px; border: 1px solid rgba(248,113,113,.14); margin-left: .35rem; vertical-align: middle; }
+.pm-close { margin-top: 2rem; width: 100%; padding: .65rem; background: transparent; border: 1px solid var(--rim2); color: var(--mid); font-size: .75rem; font-family: var(--sans); border-radius: 2px; cursor: pointer; transition: color .2s, border-color .2s; }
+.pm-close:hover { color: var(--prose); border-color: rgba(255,255,255,.28); }
+
+/* ════════════════════════════════════════
+   WORK CASE-STUDY OVERLAY
+════════════════════════════════════════ */
+#wmodal {
+  position: fixed; inset: 0; z-index: 8000;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+#wmodal.open { pointer-events: all; }
+#wmodal-back {
+  position: absolute; inset: 0;
+  background: rgba(6,6,10,.75); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  opacity: 0; transition: opacity .35s;
+}
+#wmodal.open #wmodal-back { opacity: 1; }
+#wmodal-panel {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 640px; margin: 0 1rem; max-height: 85vh; overflow-y: auto;
+  background: #10101a; border: 1px solid var(--rim2);
+  border-radius: 10px; padding: 2.5rem;
+  transform: translateY(24px) scale(.98); opacity: 0;
+  transition: transform .4s var(--ease), opacity .3s;
+}
+#wmodal.open #wmodal-panel { transform: translateY(0) scale(1); opacity: 1; }
+#wmodal .pm-handle { display: none; }
+.wm-kicker { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 1rem; }
+.wm-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 200; font-style: italic; color: var(--prose); margin-bottom: 1.5rem; letter-spacing: -.02em; }
+.wm-role { font-size: .8rem; color: var(--mid); margin-bottom: 1.25rem; }
+.wm-desc { font-size: .85rem; color: var(--prose); line-height: 1.75; margin-bottom: 1.1rem; }
+.wm-desc strong { color: var(--teal); font-weight: 500; }
+#wmodal-body .tag-cloud { margin-top: 1.5rem; }
+
+/* ════════════════════════════════════════
+   COOKIE BAR
+════════════════════════════════════════ */
+#cbar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 7000;
+  padding: 1rem var(--ph);
+  background: rgba(6,6,10,.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--rim);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  transform: translateY(105%); transition: transform .5s var(--ease);
+}
+#cbar.up { transform: translateY(0); }
+#cbar[aria-hidden="true"] { display: none; }
+.cbar-t { font-size: .73rem; color: var(--mid); max-width: 480px; line-height: 1.55; }
+.cbar-t button { color: var(--teal); background: none; border: none; font-family: var(--sans); font-size: .73rem; cursor: pointer; padding: 0; }
+.cbar-bs { display: flex; gap: .6rem; flex-shrink: 0; }
+.cb { padding: .42rem 1rem; border-radius: 2px; font-size: .72rem; font-family: var(--sans); cursor: pointer; transition: all .2s; }
+.cb-ok { background: var(--teal); color: #080C14; border: none; font-weight: 500; }
+.cb-ok:hover { background: #5ae8d5; }
+.cb-no { background: transparent; color: var(--mid); border: 1px solid var(--rim); font-weight: 300; }
+.cb-no:hover { color: var(--prose); border-color: var(--rim2); }
+
+/* ════════════════════════════════════════
+   REDUCED MOTION
+════════════════════════════════════════ */
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  #webgl,#grain,.hero-bloom,.hero-bloom-r { display: none; }
+  .clip-inner { transform: none !important; }
+  #loader { display: none; }
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media(max-width:600px){
+  .hero-stats { flex-wrap: wrap; width: 100%; }
+  .stat-cell { border-right: none; border-bottom: 1px solid var(--rim); flex: 1 1 40%; }
+  .testi-card { width: 320px; }
+  .lr-name { font-size: 1.4rem; }
+  nav { padding: 1rem 1.5rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+  #cbar { flex-direction: column; align-items: flex-start; }
+  .cbar-bs { width: 100%; justify-content: flex-end; }
+}
+
+:root{--display:'Space Grotesk',sans-serif;--serif:'Fraunces',Georgia,serif;--sans:'Plus Jakarta Sans',system-ui,sans-serif}
+.nav-logo{font-family:var(--display);font-style:normal;font-weight:700;letter-spacing:-.08em}
+.hero-h1,.sec-h{font-family:var(--display);font-style:normal;font-weight:500;letter-spacing:-.065em}
+.hero-h1 .word-accent{color:var(--teal);font-weight:400}
+.about-grid{display:grid;grid-template-columns:minmax(220px,.72fr) 1.28fr;gap:clamp(2rem,7vw,7rem);align-items:center}
+.about-photo-wrap{position:relative;max-width:360px}.about-photo{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;filter:grayscale(1) contrast(1.06);border:1px solid var(--rim2)}
+.about-photo-caption{display:block;color:var(--mid);font-size:.58rem;letter-spacing:.16em;margin-top:.8rem}
+.about-lead{font-size:clamp(1.15rem,2vw,1.55rem);color:var(--prose);line-height:1.5;margin-bottom:1.2rem;max-width:680px}
+.about-text,.section-intro,.skills-note{color:var(--mid);max-width:680px;margin-bottom:1.8rem}
+.text-link{color:var(--teal);text-decoration:none;font-size:.82rem;border-bottom:1px solid var(--rim2);padding-bottom:.4rem}
+.section-intro{margin-top:-3.5rem;margin-bottom:2.5rem}.skills-note{margin-top:2rem;font-size:.78rem}
+.principle-mark{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--rim2);color:var(--teal);font-family:var(--display)}
+.work-card{min-height:370px}.wp-media{height:220px}.wp-media img{object-fit:cover}
+@media(max-width:700px){.about-grid{grid-template-columns:1fr}.about-photo-wrap{max-width:240px}.hero-stats{display:grid;grid-template-columns:1fr 1fr}.stat-cell{padding:1rem}.nav-right{gap:1rem}.nav-index{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><div id="loader" aria-hidden="true"><div id="loader-name"><span>S</span><span>u</span><span>r</span><span>y</span><span>o</span><span>&nbsp;</span><span>W</span><span>e</span><span>d</span><span>o</span></div><div id="loader-bar"></div><div id="loader-panels"><div class="loader-panel" id="lp-l"></div><div class="loader-panel" id="lp-r"></div></div></div><nav role="navigation" aria-label="Main navigation" id="main-nav"><a href="./" class="nav-logo">SWS<span style="color:var(--teal)">.</span></a><div class="nav-right"><span class="nav-index" id="nav-index">00</span><a href="cv/" class="nav-cta nav-cv">Professional CV ↗</a><a href="https://www.linkedin.com/in/suryo-wedo-susilo/" target="_blank" rel="noopener noreferrer" class="nav-cta">Connect ↗</a></div></nav><main id="main"><section class="hero" data-section="01" aria-labelledby="hero-h"><canvas id="webgl" aria-hidden="true"></canvas><canvas id="grain" aria-hidden="true"></canvas><div class="hero-grid"></div><div class="hero-bloom"></div><div class="hero-bloom-r"></div><div class="hero-inner"><p class="hero-eyebrow" id="hero-eye"><span class="hero-eyebrow-line"></span> IT SUPPORT SPECIALIST · SURABAYA, INDONESIA</p><h1 class="hero-h1" id="hero-h"><span class="clip-wrap"><span class="clip-inner">Suryo Wedo</span></span><span class="clip-wrap"><span class="clip-inner"><span class="word-accent">Susilo.</span></span></span></h1><p class="hero-sub"><span class="clip-wrap"><span class="clip-inner">Building solutions through technology.</span></span><span class="clip-wrap"><span class="clip-inner">Supporting systems, people, and meaningful digital experiences.</span></span></p><div class="hero-stats" id="hero-stats"><div class="stat-cell"><span class="stat-val">5+</span><span class="stat-lbl">Years combined technical experience</span></div><div class="stat-cell"><span class="stat-val">IT</span><span class="stat-lbl">Infrastructure &amp; operations</span></div><div class="stat-cell"><span class="stat-val">01</span><span class="stat-lbl">Continuous learning mindset</span></div></div><div class="hero-ctas" id="hero-ctas"><a href="cv/" class="btn-primary"><span class="btn-fill"></span>Explore professional CV ↗</a><a href="mailto:suryowedossusilo@gmail.com" class="btn-ghost">Get in touch</a></div></div><div class="scroll-cue" id="scroll-cue"><div class="scroll-cue-line"></div><span class="scroll-cue-text">Scroll</span></div></section><div class="marquee-band"><div class="marquee-track"><span class="marquee-item">IT SUPPORT<span class="marquee-dot"></span></span><span class="marquee-item">NETWORK INFRASTRUCTURE<span class="marquee-dot"></span></span><span class="marquee-item">TECHNICAL OPERATIONS<span class="marquee-dot"></span></span><span class="marquee-item">TROUBLESHOOTING<span class="marquee-dot"></span></span><span class="marquee-item">SYSTEMS THINKING<span class="marquee-dot"></span></span><span class="marquee-item">CONTINUOUS LEARNING<span class="marquee-dot"></span></span><span class="marquee-item">DIGITAL PROJECTS<span class="marquee-dot"></span></span><span class="marquee-item">IT SUPPORT<span class="marquee-dot"></span></span><span class="marquee-item">NETWORK INFRASTRUCTURE<span class="marquee-dot"></span></span><span class="marquee-item">TECHNICAL OPERATIONS<span class="marquee-dot"></span></span><span class="marquee-item">TROUBLESHOOTING<span class="marquee-dot"></span></span><span class="marquee-item">SYSTEMS THINKING<span class="marquee-dot"></span></span><span class="marquee-item">CONTINUOUS LEARNING<span class="marquee-dot"></span></span><span class="marquee-item">DIGITAL PROJECTS<span class="marquee-dot"></span></span></div></div><section class="section" data-section="02"><div class="section-inner about-grid"><div class="about-photo-wrap"><img src="images/profile.jpg" alt="Portrait of Suryo Wedo Susilo" class="about-photo" loading="lazy"><span class="about-photo-caption">SURYO WEDO SUSILO · IT SUPPORT</span></div><div><div class="sec-kicker"><span class="sec-num">01</span><span class="sec-label">About</span></div><h2 class="sec-h"><span class="clip-wrap"><span class="clip-inner">Technology,</span></span><span class="clip-wrap"><span class="clip-inner"><em>made practical.</em></span></span></h2><p class="about-lead">I am an IT and technical operations professional with hands-on experience supporting infrastructure, networks, end-user devices, and operational technology.</p><p class="about-text">My work has included fiber-optic network installation, server setup for SAP-related operations, client computer deployment, and troubleshooting across different working environments. I also enjoy exploring software development and turning practical problems into useful digital projects.</p><a href="cv/" class="text-link">View experience and competencies ↗</a></div></div></section><section class="section" data-section="03" aria-labelledby="exp-h"><div class="section-inner"><div class="sec-kicker"><span class="sec-num">02</span><span class="sec-label">Experience</span></div><h2 class="sec-h" id="exp-h"><span class="clip-wrap"><span class="clip-inner">Hands-on work,</span></span><span class="clip-wrap"><span class="clip-inner"><em>real environments.</em></span></span></h2><div class="timeline" id="timeline"><div class="timeline-rail"><div class="timeline-rail-fill" id="tl-rail-fill"></div></div>
+<div class="tl-item"><span class="tl-node"></span><span class="tl-date">December 2023 — Present</span><p class="tl-role">IT Support</p><p class="tl-org">PT Summaedu Visitama · Indonesia</p><p class="tl-desc">Supporting daily IT operations through hardware, software, and network troubleshooting; client computer setup and deployment; server installation supporting SAP-related operations; and fiber-optic network installation for factory infrastructure in Pasuruan. Also provides technical support for school environments and robotics learning activities for elementary students.</p><div class="tl-highlights"><span class="tag">IT Support</span><span class="tag">Network Infrastructure</span><span class="tag">Server Installation</span><span class="tag">Troubleshooting</span></div></div>
+<div class="tl-item"><span class="tl-node"></span><span class="tl-date">March 2021 — June 2023</span><p class="tl-role">Technical Support / Technician</p><p class="tl-org">NAV Karaoke Keluarga</p><p class="tl-desc">Maintained and troubleshot audio systems, microphones, lighting and multimedia equipment, printers, computers, and office network connectivity while coordinating technical readiness for daily room operations.</p><div class="tl-highlights"><span class="tag">Multimedia Systems</span><span class="tag">Hardware Maintenance</span><span class="tag">Network Support</span></div></div>
+<div class="tl-item"><span class="tl-node"></span><span class="tl-date">2017 — 2023</span><p class="tl-role">Chairperson</p><p class="tl-org">Karang Taruna RW 010 · Surabaya</p><p class="tl-desc">Coordinated youth-community activities and supported communication, teamwork, and event execution at the neighbourhood level.</p><div class="tl-highlights"><span class="tag">Team Coordination</span><span class="tag">Community Leadership</span></div></div></div></div></section><section class="section" data-section="04" aria-labelledby="work-h"><div class="section-inner"><div class="sec-kicker"><span class="sec-num">03</span><span class="sec-label">Selected projects</span></div><h2 class="sec-h" id="work-h"><span class="clip-wrap"><span class="clip-inner">Ideas into</span></span><span class="clip-wrap"><span class="clip-inner"><em>working systems.</em></span></span></h2><p class="section-intro">A selection of technical and academic work. Project statuses are stated as currently known.</p><div class="work-grid" id="work-grid"><button class="work-card" type="button" data-target="wm-1"><div class="wp-media"><img src="images/project-erp.svg" alt="ERP Multi Talent illustration" loading="lazy"><span class="wp-num">01</span></div><div class="wp-body"><span class="wp-kicker">IN DEVELOPMENT · LARAVEL</span><p class="wp-title">ERP Multi Talent</p><div class="tag-cloud"><span class="tag">Laravel 11</span><span class="tag">PHP</span><span class="tag">MySQL</span></div><span class="wp-view">View case study ↗</span></div></button><button class="work-card" type="button" data-target="wm-2"><div class="wp-media"><img src="images/project-funrun.svg" alt="Fun Run UWP illustration" loading="lazy"><span class="wp-num">02</span></div><div class="wp-body"><span class="wp-kicker">DEVELOPMENT / PROTOTYPE</span><p class="wp-title">Fun Run UWP</p><div class="tag-cloud"><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div><span class="wp-view">View case study ↗</span></div></button><button class="work-card" type="button" data-target="wm-3"><div class="wp-media"><img src="images/project-finova.svg" alt="Finova illustration" loading="lazy"><span class="wp-num">03</span></div><div class="wp-body"><span class="wp-kicker">UI/UX PROTOTYPE</span><p class="wp-title">Finova</p><div class="tag-cloud"><span class="tag">HTML</span><span class="tag">Tailwind CSS</span><span class="tag">JavaScript</span></div><span class="wp-view">View case study ↗</span></div></button><button class="work-card" type="button" data-target="wm-4"><div class="wp-media"><img src="images/project-greedy.svg" alt="Greedy Nearest Neighbor illustration" loading="lazy"><span class="wp-num">04</span></div><div class="wp-body"><span class="wp-kicker">ACADEMIC PROJECT · PYTHON</span><p class="wp-title">Greedy Nearest Neighbor</p><div class="tag-cloud"><span class="tag">Python</span><span class="tag">Greedy</span><span class="tag">Euclidean Distance</span></div><span class="wp-view">View case study ↗</span></div></button></div></div></section><template id="wm-1"><span class="wm-kicker">IN DEVELOPMENT · LARAVEL</span><h3 class="wm-title">ERP Multi Talent</h3><p class="wm-role"><strong>Project focus:</strong> Laravel 11 · PHP · MySQL</p><p class="wm-desc">A Laravel-based ERP project covering employee records, inventory, sales, purchasing, finance, and reporting, with tenant separation as a core design concern.</p><p><a href="https://github.com/suryowedossusilo-netizen/ERP_MULTI_TALENT" target="_blank" rel="noopener noreferrer">View repository ↗</a></p></template><template id="wm-2"><span class="wm-kicker">DEVELOPMENT / PROTOTYPE</span><h3 class="wm-title">Fun Run UWP</h3><p class="wm-role"><strong>Project focus:</strong> JavaScript · Node.js · MongoDB</p><p class="wm-desc">A web project exploring participant registration, category management, BIB and QR generation, payment-status tracking, email notifications, and event administration.</p><p><a href="https://github.com/suryowedossusilo-netizen/FUN-RUN-UWP" target="_blank" rel="noopener noreferrer">View repository ↗</a></p></template><template id="wm-3"><span class="wm-kicker">UI/UX PROTOTYPE</span><h3 class="wm-title">Finova</h3><p class="wm-role"><strong>Project focus:</strong> HTML · Tailwind CSS · JavaScript</p><p class="wm-desc">A responsive finance interface concept for transaction history, wallet pockets, budget allocation, reports, and emergency-fund planning. Auto-Split is a frontend simulation, not a connected AI or banking service.</p><p><a href="https://github.com/suryowedossusilo-netizen/finova-app" target="_blank" rel="noopener noreferrer">View repository ↗</a></p></template><template id="wm-4"><span class="wm-kicker">ACADEMIC PROJECT · PYTHON</span><h3 class="wm-title">Greedy Nearest Neighbor</h3><p class="wm-role"><strong>Project focus:</strong> Python · Greedy · Euclidean Distance</p><p class="wm-desc">A Python implementation that calculates Euclidean distances between eight coordinate-based locations, repeatedly selecting the nearest unvisited point and returning to the starting location. It is a heuristic, not a claim of globally optimal routing.</p><p><a href="https://github.com/suryowedossusilo-netizen/TUGAS-KULIAH" target="_blank" rel="noopener noreferrer">View repository ↗</a></p></template><div id="wmodal" role="dialog" aria-modal="true" aria-labelledby="wm-title-live" aria-hidden="true"><div id="wmodal-back"></div><div id="wmodal-panel"><div class="pm-handle"></div><div id="wmodal-body"></div><button class="pm-close" id="wm-close" type="button">Close</button></div></div><section class="section" data-section="05" aria-labelledby="skills-h"><div class="section-inner"><div class="sec-kicker"><span class="sec-num">04</span><span class="sec-label">Technical expertise</span></div><h2 class="sec-h" id="skills-h"><span class="clip-wrap"><span class="clip-inner">Practical skills,</span></span><span class="clip-wrap"><span class="clip-inner"><em>built through work.</em></span></span></h2><div class="skills-grid" id="skills-grid"><div class="skill-col"><p class="skill-col-h">IT Support & Infrastructure</p><div class="tag-cloud"><span class="tag">Hardware troubleshooting</span><span class="tag">Software support</span><span class="tag">Client computer deployment</span><span class="tag">Server installation</span><span class="tag">Network installation</span><span class="tag">Fiber optics</span><span class="tag">Connectivity troubleshooting</span><span class="tag">Windows systems</span></div></div><div class="skill-col"><p class="skill-col-h">Development & Data</p><div class="tag-cloud"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Python</span><span class="tag">MySQL</span><span class="tag">Git & GitHub</span></div></div><div class="skill-col"><p class="skill-col-h">Tools & Operations</p><div class="tag-cloud"><span class="tag">SAP-related infrastructure support</span><span class="tag">VS Code</span><span class="tag">Figma</span><span class="tag">Canva</span><span class="tag">Multimedia systems</span><span class="tag">Technical coordination</span><span class="tag">WordPress administration</span></div></div></div><p class="skills-note">Skills are listed by practical exposure and project use. No percentage-based proficiency scores are used.</p></div></section><section class="section" data-section="06" aria-labelledby="edu-h"><div class="section-inner"><div class="sec-kicker"><span class="sec-num">05</span><span class="sec-label">Education</span></div><h2 class="sec-h" id="edu-h"><span class="clip-wrap"><span class="clip-inner">Learning as</span></span><span class="clip-wrap"><span class="clip-inner"><em>a constant.</em></span></span></h2><div class="edu-list" id="edu-list"><div class="edu-item"><button class="edu-trigger" type="button" aria-expanded="false"><div class="edu-left"><span class="edu-num">01</span><div class="edu-titles"><p class="edu-degree">Bachelor's Degree in Informatics Engineering</p><p class="edu-inst">Universitas Wijaya Putra · Faculty of Informatics</p></div></div><div class="edu-right"><span class="edu-year">2025 — Present</span><span class="edu-plus"></span></div></button><div class="edu-panel"><div class="edu-panel-inner"><p class="edu-note">Currently pursuing undergraduate studies in Informatics Engineering, with interests in algorithms, software development, information systems, and practical technology solutions.</p></div></div></div></div></div></section><div class="testi-outer" id="testi-outer" data-section="07"><div class="testi-sticky"><div class="testi-header"><div class="sec-kicker"><span class="sec-num">06</span><span class="sec-label">Working principles</span></div><h2 class="sec-h" style="margin-bottom:0" id="proof-h">How I approach <em>the work.</em></h2></div><div class="testi-track-wrap" aria-labelledby="proof-h"><div class="testi-track" id="testi-track"><div class="testi-card"><span class="tc-platform">01 · Understand first</span><p class="tc-quote">Start by understanding the operational context, the user’s problem, and the impact before choosing a technical fix.</p><div class="tc-attr-row"><span class="principle-mark">01</span><p class="tc-attr">Context before assumptions</p></div></div><div class="testi-card"><span class="tc-platform">02 · Keep it dependable</span><p class="tc-quote">Prioritise stable, maintainable solutions and clear communication so systems remain useful after an issue is resolved.</p><div class="tc-attr-row"><span class="principle-mark">02</span><p class="tc-attr">Reliability through clarity</p></div></div><div class="testi-card"><span class="tc-platform">03 · Keep learning</span><p class="tc-quote">Combine hands-on technical work with continuous learning in software, infrastructure, and information systems.</p><div class="tc-attr-row"><span class="principle-mark">03</span><p class="tc-attr">Progress through practice</p></div></div></div></div><div class="testi-progress"><div class="testi-progress-fill" id="testi-prog"></div></div></div></div><section class="section" data-section="08" aria-labelledby="links-h"><div class="section-inner"><div class="sec-kicker"><span class="sec-num">07</span><span class="sec-label">Connect</span></div><h2 class="sec-h" id="links-h"><span class="clip-wrap"><span class="clip-inner">Let's build</span></span><span class="clip-wrap"><span class="clip-inner"><em>something useful.</em></span></span></h2><div class="links-list"><a href="cv/" class="link-row"><div class="lr-left"><span class="lr-num">01</span><div><p class="lr-name">Professional CV</p><p class="lr-desc">Corporate and ATS-friendly versions</p></div></div><div class="lr-arrow">↗</div></a><a href="mailto:suryowedossusilo@gmail.com" class="link-row"><div class="lr-left"><span class="lr-num">02</span><div><p class="lr-name">Email</p><p class="lr-desc">suryowedossusilo@gmail.com</p></div></div><div class="lr-arrow">↗</div></a><a href="https://github.com/suryowedossusilo-netizen" target="_blank" rel="noopener noreferrer" class="link-row"><div class="lr-left"><span class="lr-num">03</span><div><p class="lr-name">GitHub</p><p class="lr-desc">Repositories and project work</p></div></div><div class="lr-arrow">↗</div></a><a href="https://www.linkedin.com/in/suryo-wedo-susilo/" target="_blank" rel="noopener noreferrer" class="link-row"><div class="lr-left"><span class="lr-num">04</span><div><p class="lr-name">LinkedIn</p><p class="lr-desc">Professional profile</p></div></div><div class="lr-arrow">↗</div></a><a href="https://www.instagram.com/vruimte_/" target="_blank" rel="noopener noreferrer" class="link-row"><div class="lr-left"><span class="lr-num">05</span><div><p class="lr-name">Instagram</p><p class="lr-desc">@vruimte_</p></div></div><div class="lr-arrow">↗</div></a></div></div></section><div class="footer-cta" data-section="09"><div class="fcta-glow"></div><div class="fcta-inner"><span class="fcta-kicker">Suryo Wedo Susilo · IT Support Specialist</span><h2 class="fcta-h"><span class="clip-wrap"><span class="clip-inner">Technology should</span></span><span class="clip-wrap"><span class="clip-inner">make work <em>better.</em></span></span></h2><p class="fcta-sub">Open to professional conversations and meaningful technical collaboration.</p><a href="mailto:suryowedossusilo@gmail.com" class="btn-primary"><span class="btn-fill"></span>Start a conversation ↗</a></div></div><div class="legal">This portfolio presents selected work and experience. Project statuses are stated as currently known and may evolve as development continues.</div></main><footer role="contentinfo"><p class="foot-copy">&copy; 2026 Suryo Wedo Susilo · Surabaya, Indonesia</p><ul class="foot-links"><li><a href="https://github.com/suryowedossusilo-netizen">GitHub</a></li><li><a href="https://www.linkedin.com/in/suryo-wedo-susilo/">LinkedIn</a></li><li><a href="mailto:suryowedossusilo@gmail.com">Email</a></li></ul></footer><script defer src="main.js"></script></body></html>

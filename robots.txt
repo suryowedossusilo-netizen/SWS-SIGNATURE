@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://suryowedossusilo-netizen.github.io/SWS-SIGNATURE/sitemap.xml

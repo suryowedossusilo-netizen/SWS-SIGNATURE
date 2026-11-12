@@ -1,0 +1,10 @@
+{
+  "name": "Suryo Wedo Susilo — Portfolio",
+  "short_name": "SWS Portfolio",
+  "description": "IT Support, infrastructure and technology portfolio.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080C14",
+  "theme_color": "#080C14",
+  "icons": []
+}
