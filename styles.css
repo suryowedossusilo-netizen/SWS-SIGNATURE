@@ -92,3 +92,15 @@ body{background:#08090d;color:#f4eee6}
 .experience-section,.work-section,.education-section,.closing-section{padding-top:82px;padding-bottom:76px}}
 @media(max-width:390px){.cinema-copy h1{font-size:64px}.cinematic-samurai{height:390px}.cinema-bottomline{letter-spacing:.12em}.chapter-content h3{font-size:54px}}
 @media(prefers-reduced-motion:reduce){.blood-moon,.moon-halo,.samurai-aura,.stage-orbit,.ground-mist,.film-grain,.chapter-light,.cinema-copy,.letterbox,.scroll-line{animation:none!important}.cinema-copy{opacity:1;transform:none;filter:none}}
+
+/* SECOND-PASS CINEMA: make the environment read clearly at a glance */
+.torii-back{z-index:2;right:2%;bottom:2%;width:clamp(220px,27vw,360px);height:clamp(270px,34vw,440px);transform:none;opacity:.78;filter:drop-shadow(0 0 18px rgba(158,35,31,.22))}
+.torii-back i{height:16px;top:9%;left:-14%;right:-14%;background:linear-gradient(#39171a,#1a0b10);box-shadow:0 0 22px rgba(172,55,45,.14)}
+.torii-back b{height:11px;top:17%;left:-7%;right:-7%;background:#241015}
+.torii-back span{width:15px;top:17%;bottom:0;left:16%;background:linear-gradient(90deg,#1c0c10,#35171a);box-shadow:calc(clamp(220px,27vw,360px)*.66) 0 #1c0c10}
+.torii-front{z-index:2;right:27%;bottom:-8%;width:clamp(150px,17vw,220px);height:clamp(200px,23vw,300px);transform:none;opacity:.38;filter:blur(.5px)}
+.torii-front i{height:10px;top:9%;left:-13%;right:-13%;background:#1d0d11}.torii-front b{height:7px;top:17%;left:-6%;right:-6%;background:#170a0e}.torii-front span{width:9px;top:17%;bottom:0;left:16%;box-shadow:calc(clamp(150px,17vw,220px)*.66) 0 #170a0e}
+.ground-mist{z-index:5;bottom:0;height:31%;filter:blur(25px);opacity:.9;background:linear-gradient(0deg,rgba(173,151,141,.16),rgba(128,91,83,.1) 28%,transparent 86%),radial-gradient(ellipse at 75% 70%,rgba(178,91,73,.2),transparent 58%)}
+.mist-two{z-index:5;bottom:9%;height:22%;opacity:.68;filter:blur(32px);background:radial-gradient(ellipse at 32% 60%,rgba(164,133,120,.19),transparent 66%)}
+.cinema-hero:before{background:linear-gradient(90deg,rgba(4,5,8,.99) 0%,rgba(6,7,10,.88) 31%,rgba(7,7,10,.27) 58%,rgba(5,6,8,.05) 100%),linear-gradient(0deg,#050609 0%,transparent 34%,rgba(5,6,9,.22) 100%)}
+@media(max-width:700px){.torii-back{right:-8%;bottom:12%;width:220px;height:280px;opacity:.56}.torii-front{right:30%;bottom:4%;width:155px;height:205px;opacity:.27}.ground-mist{height:24%;opacity:.8}.mist-two{height:17%;bottom:11%}}
