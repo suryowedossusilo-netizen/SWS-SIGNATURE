@@ -21,3 +21,5 @@
 .education-section .section-kicker{margin:40px 0 17px}.education-section h2{margin-bottom:30px}.education-item{grid-template-columns:1fr auto;gap:7px 12px;padding:20px 0}.education-years{grid-column:1/-1}.education-item>div{grid-column:1}.education-item h3{font-size:19px}.education-state{grid-column:2;grid-row:2}
 .closing-section .section-kicker{margin:48px 0 20px}.closing-copy{font-size:11px}.closing-bottom{display:block;margin-top:58px}.closing-email{font-size:17px}.social-links{margin-top:25px;gap:17px}.footer-inner{min-height:68px;flex-wrap:wrap;padding-block:15px}.footer-inner>span{font-size:7px}}
 @media(max-width:390px){:root{--wrap:calc(100% - 32px)}.hero h1{font-size:56px}.samurai-stage{height:365px}.stage-caption{font-size:6px}.project-card{grid-template-columns:35% 1fr;gap:10px}.project-info p{font-size:8.5px}}
+
+.model-fallback{transition:opacity .35s ease,visibility .35s}.model-fallback.is-loaded{opacity:0;visibility:hidden}
