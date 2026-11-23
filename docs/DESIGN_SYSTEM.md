@@ -1,23 +1,21 @@
-# Design system — SWS-SIGNATURE
+# Design system — THE GUARDIAN'S OATH
 
-## Direction
-Cinematic editorial portfolio for a technical professional. Visual impact comes from the real portrait, strong scale, deliberate cropping, disciplined composition and typography—not decorative effects.
+## Concept
+A cinematic portfolio told through the metaphor of a samurai guardian. The character is the visual protagonist; the professional story remains factual.
 
-## Taste Skill classification
-- Page type: `service`; site kind: `other`.
-- Hero: photo-led portrait with a plain, factual headline.
-- Moments: type-led profile statement and clear experience/project compositions.
-- Effects: none. Service pages do not receive shader grounds, WebGL scenes, grain, gradients or decorative 3D under Taste Skill.
-- Motion: one hero entrance, restrained hover and press feedback, no scroll reveal, tilt, parallax or scroll-jacking.
+## Narrative
+1. The Oath — the hero and 3D samurai.
+2. The Path — network infrastructure and connecting people.
+3. The Watch — user support and troubleshooting.
+4. The Armoury — selected technical and academic projects.
+5. The Discipline — education and leadership.
+6. The Next Chapter — contact.
 
-## Tokens
-Paper `#f5f3ed`; white `#fffefa`; ink `#17232d`; muted `#647078`; divider `#d8d7d0`; soft surface `#e9e7df`; accent `#087f8c`; closing ground `#14232d`.
+## Visual language
+Near-black grounds, restrained crimson and aged gold, condensed display type, wide negative space, fine rules and editorial numbering. Avoid fantasy game UI clutter, fake stats, invented achievements, excessive effects and decorative copy.
 
-## Typography and layout
-Space Grotesk for display, DM Sans for body, Georgia for restrained editorial emphasis. Centered 1220px content frame, consistent edges, one clear section per screen, text-first stacking on mobile. Project visuals sit beside their copy, not as captioned image tiles.
+## 3D implementation
+One interactive GLB character in the hero. Samurai Commander by 3DAssets.dev; 3.9k triangles, idle/bow/wave clips, CC0 1.0. Loaded with model-viewer 4.0.0. No additional canvas, shader, particle layer or scroll-controlled animation.
 
-## Accessibility
-Opaque sticky navigation, keyboard-visible focus, labelled mobile menu, descriptive portrait alt text, decorative project artwork with empty alt, and full reduced-motion support.
-
-## CV
-The designed CV and ATS CV remain separate routes and are not redesigned as part of this portfolio change.
+## Accessibility and performance
+Keyboard-accessible navigation, descriptive model alt text, visible focus, a fallback if the model fails, mobile framing, and reduced-motion support. The CV pages and existing project links remain intact.
