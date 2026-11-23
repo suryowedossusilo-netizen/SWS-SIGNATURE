@@ -1,12 +1,12 @@
 # SWS-SIGNATURE
 
-Responsive editorial portfolio and professional CV for **Suryo Wedo Susilo**.
+Cinematic editorial portfolio and professional CV for **Suryo Wedo Susilo**.
 
-- `index.html`: portfolio profile, experience, selected projects, education, and contact.
+- `index.html`: portfolio profile, experience, selected projects, education and contact.
 - `cv/index.html`: designed CV with profile photo and print-to-PDF support.
-- `cv/ats.html`: text-first ATS-friendly resume.
-- `styles.css`, `main.js`, and `cv/cv.css`: responsive styling and lightweight interactions.
+- `cv/ats.html`: text-first ATS CV.
+- `AGENT.md`: project rules and Taste Skill usage.
+- `.agents/skills/design-taste-frontend/SKILL.md`: pinned official Taste Skill instructions.
+- `.agents/plugins/taste-skill`: complete upstream Taste Skill package pinned as a Git submodule.
 
-Warm off-white, charcoal, muted stone, restrained terracotta, editorial typography, and no build step or framework. GitHub Pages serves the static site from main/root.
-
-Content is factual: ERP Multi Talent in development; Fun Run UWP development/prototype; Finova UI/UX prototype; Greedy Nearest Neighbor academic project. No fabricated metrics, testimonials, certifications, or skill scores. Existing MIT license and attribution are retained.
+GitHub Pages serves the static files from the repository root. The Taste Skill submodule is a design/development reference and is not required by the published page.

@@ -1,0 +1,4 @@
+[submodule ".agents/plugins/taste-skill"]
+	path = .agents/plugins/taste-skill
+	url = https://github.com/Leonxlnx/taste-skill.git
+	branch = main
