@@ -1,5 +1,13 @@
 # Design system
 
-Portfolio palette: `#080C14`, `#101722`, `#F2F2F2`, `#9299A5`, `#566579`, accent `#00E5FF`. Space Grotesk display, Plus Jakarta Sans body, Fraunces editorial accents. Motion foundation: loader reveal, Three.js starfield, film grain, GSAP scroll reveals, Lenis smooth scrolling, case-study overlay, and horizontal principles track. Respect reduced motion.
+Editorial professional direction: calm, precise, confident, understated.
 
-CV: white paper, navy hierarchy, slate supporting text, Inter/system sans-serif, clear section labels, no decorative skill scores. Executive includes approved photo; ATS is photo-free. Print stylesheet supports browser Print → Save as PDF.
+Palette: paper #f4f2ed; white #fffefa; ink #20211f; muted #77766f; divider #d9d6ce; terracotta #b65e45.
+
+Typography: Manrope display, DM Sans body, Georgia/Times for restrained editorial emphasis.
+
+Layout: centered max-width 1180px, asymmetric hero/profile image, numbered section labels, thin dividers, generous rhythm, responsive mobile navigation.
+
+Motion: lightweight menu and subtle hover only. Respect prefers-reduced-motion. No WebGL, film grain, scroll hijacking, or animation dependencies.
+
+CV: white-paper layout, clear hierarchy, photo on designed CV only, ATS text-first version, browser print-to-PDF styles.
