@@ -1,21 +1,26 @@
 # Design system — THE GUARDIAN'S OATH
 
-## Concept
-A cinematic portfolio told through the metaphor of a samurai guardian. The character is the visual protagonist; the professional story remains factual.
-
-## Narrative
-1. The Oath — the hero and 3D samurai.
-2. The Path — network infrastructure and connecting people.
-3. The Watch — user support and troubleshooting.
-4. The Armoury — selected technical and academic projects.
-5. The Discipline — education and leadership.
-6. The Next Chapter — contact.
+## Direction
+Cinematic 3D samurai chronicle. The user explicitly asked for a samurai character as the primary 3D subject and a story. Do not reinterpret as editorial minimalism.
 
 ## Visual language
-Near-black grounds, restrained crimson and aged gold, condensed display type, wide negative space, fine rules and editorial numbering. Avoid fantasy game UI clutter, fake stats, invented achievements, excessive effects and decorative copy.
+A dark feudal-Japan-inspired cinematic world: blood-red moon, layered mountain and torii silhouettes, ember drift, low ground mist, restrained film grain, vignette, atmospheric lighting, deep shadows, cinematic title typography and letterbox opening. Avoid generic dashboard panels, corporate minimalism, random sci-fi widgets and fantasy game HUD clutter.
 
-## 3D implementation
-One interactive GLB character in the hero. Samurai Commander by 3DAssets.dev; 3.9k triangles, idle/bow/wave clips, CC0 1.0. Loaded with model-viewer 4.0.0. No additional canvas, shader, particle layer or scroll-controlled animation.
+## Narrative
+- Prologue: The Guardian's Oath — samurai hero, interactive GLB.
+- Chapter I: The Oath — preparation and operational readiness.
+- Chapter II: The Path — fiber, networks and server support.
+- Chapter III: The Watch — troubleshooting and user support.
+- Field Record — real employment history.
+- Armoury — selected real projects.
+- Discipline — education and leadership.
+- Next Chapter — contact.
 
-## Accessibility and performance
-Keyboard-accessible navigation, descriptive model alt text, visible focus, a fallback if the model fails, mobile framing, and reduced-motion support. The CV pages and existing project links remain intact.
+## 3D
+Samurai Commander from 3DAssets.dev, CC0 1.0, 3.9k triangles, idle/bow/wave. URL: https://cdn.3dassets.dev/assets/39186/v1/model.glb. GLB endpoint verified as valid binary glTF. Render with model-viewer; retain a fallback if loading fails.
+
+## Motion
+A restrained particle canvas (max 54 embers, DPR cap 1.5), atmospheric CSS motion, opening letterbox, subtle scroll reveal for chapters and project/experience cards. No scroll-jacking or heavy 3D engine. Respect prefers-reduced-motion.
+
+## Accessibility
+Semantic sections and headings, keyboard navigation, visible focus, model alt text, reduced-motion fallback and responsive mobile composition. Preserve CV pages and existing project URLs.
